@@ -1,0 +1,576 @@
+nr5glab@ranems:~/sridhar/oran-sc-ric$ docker compose -p simulator -f docker-compose-simulator.yaml up
+[+] Running 1/1
+ ✔ Container e2sim  Created                                                                                                                         0.0s 
+Attaching to e2sim
+e2sim  | [kpm_callbacks.cpp:65] [INFO] Starting KPM simulator
+e2sim  | [encode_kpm.cpp:49] [INFO] short_name: ORAN-E2SM-KPM, func_desc: KPM Monitor, e2sm_odi: OID123
+e2sim  | [encode_kpm.cpp:72] [INFO] Initialize event trigger style list structure
+e2sim  | [encode_kpm.cpp:91] [INFO] Initialize report style structure
+e2sim  | [e2sim.cpp:65] [INFO] About to register E2SM RAN function description with ID 2
+e2sim  | [e2sim.cpp:43] [INFO] About to register callback for subscription for RAN function with ID 2
+e2sim  | [e2sim.cpp:104] [INFO] Start E2 Agent (E2 Simulator)
+e2sim  | [e2sim.cpp:125] [INFO] After reading input options
+e2sim  | [e2sim_sctp.cpp:180] [INFO] [SCTP] Binding client socket to source port 36422
+e2sim  | [e2sim_sctp.cpp:187] [INFO] [SCTP] Connecting to server at 10.0.2.10:36421 ...
+e2sim  | [e2sim_sctp.cpp:194] [INFO] [SCTP] Connection established
+e2sim  | [e2sim.cpp:133] [INFO] SCTP client has been started
+e2sim  | [e2sim.cpp:143] [INFO] Constructing a list of RAN functions based on registered information
+e2sim  | [e2sim.cpp:149] [INFO] Adding RAN function ID 2, description: h0ORAN-E2SM-KPM to the list
+e2sim  | [e2sim.cpp:161] [INFO] Generate E2AP v1 setup request for all registered RAN functions
+e2sim  | <E2AP-PDU>
+e2sim  |     <initiatingMessage>
+e2sim  |         <procedureCode>1</procedureCode>
+e2sim  |         <criticality><reject/></criticality>
+e2sim  |         <value>
+e2sim  |             <E2setupRequest>
+e2sim  |                 <protocolIEs>
+e2sim  |                     <E2setupRequestIEs>
+e2sim  |                         <id>49</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <TransactionID>1</TransactionID>
+e2sim  |                         </value>
+e2sim  |                     </E2setupRequestIEs>
+e2sim  |                     <E2setupRequestIEs>
+e2sim  |                         <id>3</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <GlobalE2node-ID>
+e2sim  |                                 <gNB>
+e2sim  |                                     <global-gNB-ID>
+e2sim  |                                         <plmn-id>37 34 37</plmn-id>
+e2sim  |                                         <gnb-id>
+e2sim  |                                             <gnb-ID>
+e2sim  |                                                 10110101110001100111011110001
+e2sim  |                                             </gnb-ID>
+e2sim  |                                         </gnb-id>
+e2sim  |                                     </global-gNB-ID>
+e2sim  |                                 </gNB>
+e2sim  |                             </GlobalE2node-ID>
+e2sim  |                         </value>
+e2sim  |                     </E2setupRequestIEs>
+e2sim  |                     <E2setupRequestIEs>
+e2sim  |                         <id>10</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <RANfunctions-List>
+e2sim  |                                 <ProtocolIE-SingleContainer>
+e2sim  |                                     <id>8</id>
+e2sim  |                                     <criticality><reject/></criticality>
+e2sim  |                                     <value>
+e2sim  |                                         <RANfunction-Item>
+e2sim  |                                             <ranFunctionID>2</ranFunctionID>
+e2sim  |                                             <ranFunctionDefinition>
+e2sim  |                                                 68 30 4F 52 41 4E 2D 45 32 53 4D 2D 4B 50 4D 00 
+e2sim  |                                                 00 05 4F 49 44 31 32 33 05 00 4B 50 4D 20 4D 6F 
+e2sim  |                                                 6E 69 74 6F 72 01 01 00 01 01 07 00 50 65 72 69 
+e2sim  |                                                 6F 64 69 63 20 52 65 70 6F 72 74 01 01 10 01 01 
+e2sim  |                                                 09 00 45 32 20 4E 6F 64 65 20 4D 65 61 73 75 72 
+e2sim  |                                                 65 6D 65 6E 74 01 01 00 08 44 60 44 52 42 2E 52 
+e2sim  |                                                 6C 63 53 64 75 54 72 61 6E 73 6D 69 74 74 65 64 
+e2sim  |                                                 56 6F 6C 75 6D 65 44 4C 5F 46 69 6C 74 65 72 80 
+e2sim  |                                                 01 00 44 60 44 52 42 2E 52 6C 63 53 64 75 54 72 
+e2sim  |                                                 61 6E 73 6D 69 74 74 65 64 56 6F 6C 75 6D 65 55 
+e2sim  |                                                 4C 5F 46 69 6C 74 65 72 00 00 00 43 40 44 52 42 
+e2sim  |                                                 2E 50 65 72 44 61 74 61 56 6F 6C 75 6D 65 44 4C 
+e2sim  |                                                 44 69 73 74 2E 42 69 6E 00 00 01 43 40 44 52 42 
+e2sim  |                                                 2E 50 65 72 44 61 74 61 56 6F 6C 75 6D 65 55 4C 
+e2sim  |                                                 44 69 73 74 2E 42 69 6E 00 00 02 43 40 44 52 42 
+e2sim  |                                                 2E 52 6C 63 50 61 63 6B 65 74 44 72 6F 70 52 61 
+e2sim  |                                                 74 65 44 4C 44 69 73 74 00 00 03 42 E0 44 52 42 
+e2sim  |                                                 2E 50 61 63 6B 65 74 4C 6F 73 73 52 61 74 65 55 
+e2sim  |                                                 4C 44 69 73 74 00 00 04 42 20 4C 31 4D 2E 44 4C 
+e2sim  |                                                 2D 53 53 2D 52 53 52 50 2E 53 53 42 00 00 05 42 
+e2sim  |                                                 20 4C 31 4D 2E 44 4C 2D 53 53 2D 53 49 4E 52 2E 
+e2sim  |                                                 53 53 42 00 00 06 41 C0 4C 31 4D 2E 55 4C 2D 53 
+e2sim  |                                                 52 53 2D 52 53 52 50 00 00 07 01 01 01 01 00 01 
+e2sim  |                                                 02 11 00 45 32 20 4E 6F 64 65 20 4D 65 61 73 75 
+e2sim  |                                                 72 65 6D 65 6E 74 20 66 6F 72 20 61 20 73 69 6E 
+e2sim  |                                                 67 6C 65 20 55 45 01 02 00 08 44 60 44 52 42 2E 
+e2sim  |                                                 52 6C 63 53 64 75 54 72 61 6E 73 6D 69 74 74 65 
+e2sim  |                                                 64 56 6F 6C 75 6D 65 44 4C 5F 46 69 6C 74 65 72 
+e2sim  |                                                 80 01 00 44 60 44 52 42 2E 52 6C 63 53 64 75 54 
+e2sim  |                                                 72 61 6E 73 6D 69 74 74 65 64 56 6F 6C 75 6D 65 
+e2sim  |                                                 55 4C 5F 46 69 6C 74 65 72 00 00 00 43 40 44 52 
+e2sim  |                                                 42 2E 50 65 72 44 61 74 61 56 6F 6C 75 6D 65 44 
+e2sim  |                                                 4C 44 69 73 74 2E 42 69 6E 00 00 01 43 40 44 52 
+e2sim  |                                                 42 2E 50 65 72 44 61 74 61 56 6F 6C 75 6D 65 55 
+e2sim  |                                                 4C 44 69 73 74 2E 42 69 6E 00 00 02 43 40 44 52 
+e2sim  |                                                 42 2E 52 6C 63 50 61 63 6B 65 74 44 72 6F 70 52 
+e2sim  |                                                 61 74 65 44 4C 44 69 73 74 00 00 03 42 E0 44 52 
+e2sim  |                                                 42 2E 50 61 63 6B 65 74 4C 6F 73 73 52 61 74 65 
+e2sim  |                                                 55 4C 44 69 73 74 00 00 04 42 20 4C 31 4D 2E 44 
+e2sim  |                                                 4C 2D 53 53 2D 52 53 52 50 2E 53 53 42 00 00 05 
+e2sim  |                                                 42 20 4C 31 4D 2E 44 4C 2D 53 53 2D 53 49 4E 52 
+e2sim  |                                                 2E 53 53 42 00 00 06 41 C0 4C 31 4D 2E 55 4C 2D 
+e2sim  |                                                 53 52 53 2D 52 53 52 50 00 00 07 01 01 01 01 00 
+e2sim  |                                                 01 03 16 00 43 6F 6E 64 69 74 69 6F 6E 2D 62 61 
+e2sim  |                                                 73 65 64 2C 20 55 45 2D 6C 65 76 65 6C 20 45 32 
+e2sim  |                                                 20 4E 6F 64 65 20 4D 65 61 73 75 72 65 6D 65 6E 
+e2sim  |                                                 74 01 03 00 08 44 60 44 52 42 2E 52 6C 63 53 64 
+e2sim  |                                                 75 54 72 61 6E 73 6D 69 74 74 65 64 56 6F 6C 75 
+e2sim  |                                                 6D 65 44 4C 5F 46 69 6C 74 65 72 80 01 00 44 60 
+e2sim  |                                                 44 52 42 2E 52 6C 63 53 64 75 54 72 61 6E 73 6D 
+e2sim  |                                                 69 74 74 65 64 56 6F 6C 75 6D 65 55 4C 5F 46 69 
+e2sim  |                                                 6C 74 65 72 00 00 00 43 40 44 52 42 2E 50 65 72 
+e2sim  |                                                 44 61 74 61 56 6F 6C 75 6D 65 44 4C 44 69 73 74 
+e2sim  |                                                 2E 42 69 6E 00 00 01 43 40 44 52 42 2E 50 65 72 
+e2sim  |                                                 44 61 74 61 56 6F 6C 75 6D 65 55 4C 44 69 73 74 
+e2sim  |                                                 2E 42 69 6E 00 00 02 43 40 44 52 42 2E 52 6C 63 
+e2sim  |                                                 50 61 63 6B 65 74 44 72 6F 70 52 61 74 65 44 4C 
+e2sim  |                                                 44 69 73 74 00 00 03 42 E0 44 52 42 2E 50 61 63 
+e2sim  |                                                 6B 65 74 4C 6F 73 73 52 61 74 65 55 4C 44 69 73 
+e2sim  |                                                 74 00 00 04 42 20 4C 31 4D 2E 44 4C 2D 53 53 2D 
+e2sim  |                                                 52 53 52 50 2E 53 53 42 00 00 05 42 20 4C 31 4D 
+e2sim  |                                                 2E 44 4C 2D 53 53 2D 53 49 4E 52 2E 53 53 42 00 
+e2sim  |                                                 00 06 41 C0 4C 31 4D 2E 55 4C 2D 53 52 53 2D 52 
+e2sim  |                                                 53 52 50 00 00 07 01 01 01 02 00 01 04 15 80 43 
+e2sim  |                                                 6F 6D 6D 6F 6E 20 43 6F 6E 64 69 74 69 6F 6E 2D 
+e2sim  |                                                 62 61 73 65 64 2C 20 55 45 2D 6C 65 76 65 6C 20 
+e2sim  |                                                 4D 65 61 73 75 72 65 6D 65 6E 74 01 04 00 08 44 
+e2sim  |                                                 60 44 52 42 2E 52 6C 63 53 64 75 54 72 61 6E 73 
+e2sim  |                                                 6D 69 74 74 65 64 56 6F 6C 75 6D 65 44 4C 5F 46 
+e2sim  |                                                 69 6C 74 65 72 80 01 00 44 60 44 52 42 2E 52 6C 
+e2sim  |                                                 63 53 64 75 54 72 61 6E 73 6D 69 74 74 65 64 56 
+e2sim  |                                                 6F 6C 75 6D 65 55 4C 5F 46 69 6C 74 65 72 00 00 
+e2sim  |                                                 00 43 40 44 52 42 2E 50 65 72 44 61 74 61 56 6F 
+e2sim  |                                                 6C 75 6D 65 44 4C 44 69 73 74 2E 42 69 6E 00 00 
+e2sim  |                                                 01 43 40 44 52 42 2E 50 65 72 44 61 74 61 56 6F 
+e2sim  |                                                 6C 75 6D 65 55 4C 44 69 73 74 2E 42 69 6E 00 00 
+e2sim  |                                                 02 43 40 44 52 42 2E 52 6C 63 50 61 63 6B 65 74 
+e2sim  |                                                 44 72 6F 70 52 61 74 65 44 4C 44 69 73 74 00 00 
+e2sim  |                                                 03 42 E0 44 52 42 2E 50 61 63 6B 65 74 4C 6F 73 
+e2sim  |                                                 73 52 61 74 65 55 4C 44 69 73 74 00 00 04 42 20 
+e2sim  |                                                 4C 31 4D 2E 44 4C 2D 53 53 2D 52 53 52 50 2E 53 
+e2sim  |                                                 53 42 00 00 05 42 20 4C 31 4D 2E 44 4C 2D 53 53 
+e2sim  |                                                 2D 53 49 4E 52 2E 53 53 42 00 00 06 41 C0 4C 31 
+e2sim  |                                                 4D 2E 55 4C 2D 53 52 53 2D 52 53 52 50 00 00 07 
+e2sim  |                                                 01 01 01 03 00 01 05 11 80 45 32 20 4E 6F 64 65 
+e2sim  |                                                 20 4D 65 61 73 75 72 65 6D 65 6E 74 20 66 6F 72 
+e2sim  |                                                 20 6D 75 6C 74 69 70 6C 65 20 55 45 73 01 05 00 
+e2sim  |                                                 08 44 60 44 52 42 2E 52 6C 63 53 64 75 54 72 61 
+e2sim  |                                                 6E 73 6D 69 74 74 65 64 56 6F 6C 75 6D 65 44 4C 
+e2sim  |                                                 5F 46 69 6C 74 65 72 80 01 00 44 60 44 52 42 2E 
+e2sim  |                                                 52 6C 63 53 64 75 54 72 61 6E 73 6D 69 74 74 65 
+e2sim  |                                                 64 56 6F 6C 75 6D 65 55 4C 5F 46 69 6C 74 65 72 
+e2sim  |                                                 00 00 00 43 40 44 52 42 2E 50 65 72 44 61 74 61 
+e2sim  |                                                 56 6F 6C 75 6D 65 44 4C 44 69 73 74 2E 42 69 6E 
+e2sim  |                                                 00 00 01 43 40 44 52 42 2E 50 65 72 44 61 74 61 
+e2sim  |                                                 56 6F 6C 75 6D 65 55 4C 44 69 73 74 2E 42 69 6E 
+e2sim  |                                                 00 00 02 43 40 44 52 42 2E 52 6C 63 50 61 63 6B 
+e2sim  |                                                 65 74 44 72 6F 70 52 61 74 65 44 4C 44 69 73 74 
+e2sim  |                                                 00 00 03 42 E0 44 52 42 2E 50 61 63 6B 65 74 4C 
+e2sim  |                                                 6F 73 73 52 61 74 65 55 4C 44 69 73 74 00 00 04 
+e2sim  |                                                 42 20 4C 31 4D 2E 44 4C 2D 53 53 2D 52 53 52 50 
+e2sim  |                                                 2E 53 53 42 00 00 05 42 20 4C 31 4D 2E 44 4C 2D 
+e2sim  |                                                 53 53 2D 53 49 4E 52 2E 53 53 42 00 00 06 41 C0 
+e2sim  |                                                 4C 31 4D 2E 55 4C 2D 53 52 53 2D 52 53 52 50 00 
+e2sim  |                                                 00 07 01 01 01 03
+e2sim  |                                             </ranFunctionDefinition>
+e2sim  |                                             <ranFunctionRevision>2</ranFunctionRevision>
+e2sim  |                                             <ranFunctionOID>OID123</ranFunctionOID>
+e2sim  |                                         </RANfunction-Item>
+e2sim  |                                     </value>
+e2sim  |                                 </ProtocolIE-SingleContainer>
+e2sim  |                             </RANfunctions-List>
+e2sim  |                         </value>
+e2sim  |                     </E2setupRequestIEs>
+e2sim  |                     <E2setupRequestIEs>
+e2sim  |                         <id>50</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <E2nodeComponentConfigAddition-List>
+e2sim  |                                 <ProtocolIE-SingleContainer>
+e2sim  |                                     <id>51</id>
+e2sim  |                                     <criticality><reject/></criticality>
+e2sim  |                                     <value>
+e2sim  |                                         <E2nodeComponentConfigAddition-Item>
+e2sim  |                                             <e2nodeComponentInterfaceType><ng/></e2nodeComponentInterfaceType>
+e2sim  |                                             <e2nodeComponentID>
+e2sim  |                                                 <e2nodeComponentInterfaceTypeNG>
+e2sim  |                                                     <amf-name>nginterf</amf-name>
+e2sim  |                                                 </e2nodeComponentInterfaceTypeNG>
+e2sim  |                                             </e2nodeComponentID>
+e2sim  |                                             <e2nodeComponentConfiguration>
+e2sim  |                                                 <e2nodeComponentRequestPart>72 65 71 70 61 72 74</e2nodeComponentRequestPart>
+e2sim  |                                                 <e2nodeComponentResponsePart>72 65 73 70 61 72 74</e2nodeComponentResponsePart>
+e2sim  |                                             </e2nodeComponentConfiguration>
+e2sim  |                                         </E2nodeComponentConfigAddition-Item>
+e2sim  |                                     </value>
+e2sim  |                                 </ProtocolIE-SingleContainer>
+e2sim  |                             </E2nodeComponentConfigAddition-List>
+e2sim  |                         </value>
+e2sim  |                     </E2setupRequestIEs>
+e2sim  |                 </protocolIEs>
+e2sim  |             </E2setupRequest>
+e2sim  |         </value>
+e2sim  |     </initiatingMessage>
+e2sim  | </E2AP-PDU>
+e2sim  | [e2sim.cpp:175] [INFO] Error length 0, error buf 
+e2sim  | [e2sim.cpp:181] [INFO] Error encoded 1762
+e2sim  | [e2sim.cpp:186] [INFO] Sent E2-SETUP-REQUEST as E2AP message
+e2sim  | [e2sim.cpp:196] [INFO] Waiting for SCTP data
+e2sim  | [e2sim.cpp:203] [INFO] Received new data of size 60
+e2sim  | [e2ap_message_handler.cpp:52] [DEBUG] Unpacked E2AP-PDU: index = 2, procedureCode = 1
+e2sim  | [e2ap_message_handler.cpp:56] [INFO] Received a message of E2 setup procedure
+e2sim  | [e2ap_message_handler.cpp:64] [INFO] Received SETUP-RESPONSE-SUCCESS
+e2sim  | [e2sim.cpp:203] [INFO] Received new data of size 96
+e2sim  | [e2ap_asn1c_codec.c:207] [INFO] Initiating E2AP PDU PR message
+e2sim  | [e2ap_message_handler.cpp:52] [DEBUG] Unpacked E2AP-PDU: index = 1, procedureCode = 8
+e2sim  | [e2ap_message_handler.cpp:97] [INFO] Received a message of RIC subscription procedure
+e2sim  | [encode_e2apv1.cpp:74] [INFO] Number of IEs in original request: 3, size: 4
+e2sim  | [encode_e2apv1.cpp:84] [DEBUG] Next present value: 1, pres RAN func id: 2
+e2sim  | [encode_e2apv1.cpp:84] [DEBUG] Next present value: 2, pres RAN func id: 2
+e2sim  | [encode_e2apv1.cpp:87] [ERROR] equal pres to ranfuncid
+e2sim  | [encode_e2apv1.cpp:84] [DEBUG] Next present value: 3, pres RAN func id: 2
+e2sim  | [encode_e2apv1.cpp:92] [INFO] After loop, func_id is 2
+e2sim  | [e2ap_message_handler.cpp:101] [INFO] Received RIC subscription request for function with ID 2
+e2sim  | [e2sim.cpp:49] [INFO] We are getting the subscription callback for func id 2
+e2sim  | [e2ap_message_handler.cpp:106] [INFO] Calling callback subscription function to handle subscription request to function with ID 2
+e2sim  | [kpm_callbacks.cpp:568] [INFO] The next present value 1
+e2sim  | [kpm_callbacks.cpp:572] [INFO] in case request id
+e2sim  | [kpm_callbacks.cpp:577] [INFO] requestorId: 123, InstanceID: 3
+e2sim  | [kpm_callbacks.cpp:568] [INFO] The next present value 2
+e2sim  | [kpm_callbacks.cpp:585] [INFO] in case ran func id
+e2sim  | [kpm_callbacks.cpp:568] [INFO] The next present value 3
+e2sim  | [kpm_callbacks.cpp:598] [INFO] Action count1
+e2sim  | [kpm_callbacks.cpp:628] [INFO] After Processing Subscription Request
+e2sim  | [kpm_callbacks.cpp:631] [DEBUG] Action ID 0 1
+e2sim  | 
+e2sim  | in for loop i = 0
+e2sim  | [encode_e2apv1.cpp:757] [INFO] Subscription response
+e2sim  | <E2AP-PDU>
+e2sim  |     <successfulOutcome>
+e2sim  |         <procedureCode>8</procedureCode>
+e2sim  |         <criticality><reject/></criticality>
+e2sim  |         <value>
+e2sim  |             <RICsubscriptionResponse>
+e2sim  |                 <protocolIEs>
+e2sim  |                     <RICsubscriptionResponse-IEs>
+e2sim  |                         <id>29</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <RICrequestID>
+e2sim  |                                 <ricRequestorID>123</ricRequestorID>
+e2sim  |                                 <ricInstanceID>3</ricInstanceID>
+e2sim  |                             </RICrequestID>
+e2sim  |                         </value>
+e2sim  |                     </RICsubscriptionResponse-IEs>
+e2sim  |                     <RICsubscriptionResponse-IEs>
+e2sim  |                         <id>5</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <RANfunctionID>147</RANfunctionID>
+e2sim  |                         </value>
+e2sim  |                     </RICsubscriptionResponse-IEs>
+e2sim  |                     <RICsubscriptionResponse-IEs>
+e2sim  |                         <id>17</id>
+e2sim  |                         <criticality><reject/></criticality>
+e2sim  |                         <value>
+e2sim  |                             <RICaction-Admitted-List>
+e2sim  |                                 <ProtocolIE-SingleContainer>
+e2sim  |                                     <id>14</id>
+e2sim  |                                     <criticality><reject/></criticality>
+e2sim  |                                     <value>
+e2sim  |                                         <RICaction-Admitted-Item>
+e2sim  |                                             <ricActionID>1</ricActionID>
+e2sim  |                                         </RICaction-Admitted-Item>
+e2sim  |                                     </value>
+e2sim  |                                 </ProtocolIE-SingleContainer>
+e2sim  |                             </RICaction-Admitted-List>
+e2sim  |                         </value>
+e2sim  |                     </RICsubscriptionResponse-IEs>
+e2sim  |                 </protocolIEs>
+e2sim  |             </RICsubscriptionResponse>
+e2sim  |         </value>
+e2sim  |     </successfulOutcome>
+e2sim  | </E2AP-PDU>
+e2sim  | [kpm_callbacks.cpp:643] [INFO] Encode and sending E2AP subscription success response via SCTP
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 33
+e2sim  | [kpm_callbacks.cpp:646] [INFO] Now generating data for subscription request
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"ueMeasReport":{"du-id":1002,"measTimeStampRf":"2020-11-05T15:39:58.858734","ueMeasReportList":[{"ue-id":"Pedestrian-11","nrCellIdentity":2,"targetTput":0.3,"servingCellRfReport":{"rsrp":74,"rsrq":65,"rssinr":113},"neighbourCellList":[{"nbCellIdentity":8,"nbCellRfReport":{"rsrp":67,"rsrq":65,"rssinr":112}},{"nbCellIdentity":7,"nbCellRfReport":{"rsrp":65,"rsrq":65,"rssinr":107}},{"nbCellIdentity":9,"nbCellRfReport":{"rsrp":64,"rsrq":65,"rssinr":106}},{"nbCellIdentity":1,"nbCellRfReport":{"rsrp":63,"rsrq":65,"rssinr":104}},{"nbCellIdentity":3,"nbCellRfReport":{"rsrp":62,"rsrq":65,"rssinr":101}},{"nbCellIdentity":10,"nbCellRfReport":{"rsrp":61,"rsrq":65,"rssinr":100}},{"nbCellIdentity":6,"nbCellRfReport":{"rsrp":59,"rsrq":65,"rssinr":95}}],"throughput":0.3,"prb_usage":23}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is ueMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:188] [INFO] Start sending UE measurement reports with DU id 1002
+e2sim  | [kpm_callbacks.cpp:204] [INFO] Preparing report data for UE 0 with id 0��
+e2sim  | [kpm_callbacks.cpp:296] [INFO] This is neighbor str [{"CID" : "37343722511136087", "Cell-RF" : {"rsrp": 67, "rsrq": 65, "rssinr": 112}},{"CID" : "37343722511136077", "Cell-RF" : {"rsrp": 65, "rsrq": 65, "rssinr": 107}},{"CID" : "37343722511136097", "Cell-RF" : {"rsrp": 64, "rsrq": 65, "rssinr": 106}},{"CID" : "37343722511136017", "Cell-RF" : {"rsrp": 63, "rsrq": 65, "rssinr": 104}},{"CID" : "37343722511136037", "Cell-RF" : {"rsrp": 62, "rsrq": 65, "rssinr": 101}},{"CID" : "373437225111360107", "Cell-RF" : {"rsrp": 61, "rsrq": 65, "rssinr": 100}},{"CID" : "37343722511136067", "Cell-RF" : {"rsrp": 59, "rsrq": 65, "rssinr": 95}}]
+e2sim  | 
+e2sim  | [encode_kpm.cpp:310] [INFO] Constraint validation of indication message failed: 
+e2sim  | [kpm_callbacks.cpp:344] [INFO] Encoded UE indication message succesfully, size in bytes: 136
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:369] [INFO] Encoded UE indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 234
+e2sim  | [kpm_callbacks.cpp:388] [INFO] Measurement report for UE 0 has been sent
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"ueMeasReport":{"du-id":1005,"measTimeStampRf":"2020-11-05T15:39:58.858734","ueMeasReportList":[{"ue-id":"Pedestrian-14","nrCellIdentity":5,"targetTput":0.3,"servingCellRfReport":{"rsrp":74,"rsrq":65,"rssinr":113},"neighbourCellList":[{"nbCellIdentity":6,"nbCellRfReport":{"rsrp":67,"rsrq":65,"rssinr":112}},{"nbCellIdentity":1,"nbCellRfReport":{"rsrp":64,"rsrq":65,"rssinr":106}},{"nbCellIdentity":4,"nbCellRfReport":{"rsrp":61,"rsrq":65,"rssinr":100}},{"nbCellIdentity":7,"nbCellRfReport":{"rsrp":61,"rsrq":65,"rssinr":99}},{"nbCellIdentity":2,"nbCellRfReport":{"rsrp":58,"rsrq":65,"rssinr":94}},{"nbCellIdentity":3,"nbCellRfReport":{"rsrp":58,"rsrq":65,"rssinr":94}},{"nbCellIdentity":8,"nbCellRfReport":{"rsrp":56,"rsrq":65,"rssinr":90}}],"throughput":0.3,"prb_usage":23}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is ueMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:188] [INFO] Start sending UE measurement reports with DU id 1005
+e2sim  | [kpm_callbacks.cpp:204] [INFO] Preparing report data for UE 0 with id 0��
+e2sim  | [kpm_callbacks.cpp:296] [INFO] This is neighbor str [{"CID" : "37343722511136067", "Cell-RF" : {"rsrp": 67, "rsrq": 65, "rssinr": 112}},{"CID" : "37343722511136017", "Cell-RF" : {"rsrp": 64, "rsrq": 65, "rssinr": 106}},{"CID" : "37343722511136047", "Cell-RF" : {"rsrp": 61, "rsrq": 65, "rssinr": 100}},{"CID" : "37343722511136077", "Cell-RF" : {"rsrp": 61, "rsrq": 65, "rssinr": 99}},{"CID" : "37343722511136027", "Cell-RF" : {"rsrp": 58, "rsrq": 65, "rssinr": 94}},{"CID" : "37343722511136037", "Cell-RF" : {"rsrp": 58, "rsrq": 65, "rssinr": 94}},{"CID" : "37343722511136087", "Cell-RF" : {"rsrp": 56, "rsrq": 65, "rssinr": 90}}]
+e2sim  | 
+e2sim  | [encode_kpm.cpp:310] [INFO] Constraint validation of indication message failed: 
+e2sim  | [kpm_callbacks.cpp:344] [INFO] Encoded UE indication message succesfully, size in bytes: 136
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:369] [INFO] Encoded UE indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 234
+e2sim  | [kpm_callbacks.cpp:388] [INFO] Measurement report for UE 0 has been sent
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1006,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":7,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1006
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 7
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1006,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":1,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1006
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 1
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1006,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":2,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1006
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 2
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1006,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":5,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1006
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 5
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1006,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":9,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1006
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 9
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1006,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":6,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1006
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 6
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1012,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":12,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1012
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 12
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1010,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":10,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1010
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 10
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1004,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":4,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1004
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 4
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1003,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":3,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1003
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 3
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:166] [INFO] Current line: {"cellMeasReport":{"du-id":1008,"measTimeStampRf":"2020-11-05T15:39:58.859766","cellMeasReportList":[{"nrCellIdentity":8,"throughput":0.3,"pdcpByteMeasReport":{"measPeriodPdcpBytes":10,"pdcpBytesDl":307.2,"pdcpBytesUl":307.2},"prbMeasReport":{"measPeriodPrb":10,"availPrbDl":250,"availPrbUl":250}}]}}
+e2sim  | [kpm_callbacks.cpp:181] [INFO] First key is cellMeasReport
+e2sim  | 
+e2sim  | [kpm_callbacks.cpp:397] [INFO] Start sending Cell measurement reports with DU id 1008
+e2sim  | [kpm_callbacks.cpp:413] [INFO] Preparing report data for Cell 0 with id 8
+e2sim  | [kpm_callbacks.cpp:454] [INFO] Encoding Style 1 Message body
+e2sim  | [encode_kpm.cpp:319] [INFO] Preparing indication message for cell measurement report
+e2sim  | [kpm_callbacks.cpp:486] [INFO] Encoded Cell indication message succesfully, size in bytes: 27
+e2sim  | [encode_kpm.cpp:199] [INFO] Start initializing mocked indication header
+e2sim  | [kpm_callbacks.cpp:513] [INFO] Encoded Cell indication header succesfully, size in bytes: 38
+e2sim  | [encode_e2apv1.cpp:902] [INFO] Initializing E2AP request
+e2sim  | [e2ap_asn1c_codec.c:175] [DEBUG] [E2AP ASN] Encoded succesfully, encoded size = 122
+e2sim  | [kpm_callbacks.cpp:526] [INFO] Measurement report for Cell 0 has been sent
+
+
+nr5glab@ranems:~/sridhar/oran-sc-ric$ curl http://10.0.2.11:3800/v1/nodeb/states
+[{"inventoryName":"gnb_001_001_00000e00","globalNbId":{"plmnId":"00F110","nbId":"00000000000000000000111000000000"},"connectionStatus":"DISCONNECTED"},{"inventoryName":"gnb_734_373_16b8cef1","globalNbId":{"plmnId":"373437","nbId":"10110101110001100111011110001"},"connectionStatus":"CONNECTED"}]nr5glab@ranems:~/sridhar/oran-sc-ric$docker compose exec python_xapp_runner ./kpm_mon_xapp.py --e2_node_id=gnb_734_373_16b8cef1 --kpm_report_style=4
+1739905327658 58/RMR [INFO] ric message routing library on SI95 p=4562 mv=3 flg=00 id=a (f447e29 4.9.4 built: Dec 13 2023)
+Subscribe to E2 node ID: gnb_734_373_16b8cef1, RAN func: e2sm_kpm, Report Style: 4, metrics: ['DRB.UEThpUl', 'DRB.UEThpDl']
+Successfully subscribed with Subscription ID:  2tE7M4EFclSujfLJHCNSOlkOP1n
+Received Subscription ID to E2EventInstanceId mapping: 2tE7M4EFclSujfLJHCNSOlkOP1n -> 3
+{'response': 'OK', 'status': 200, 'payload': '{}', 'ctype': 'application/json', 'attachment': None, 'mode': 'plain'}
+10.0.2.13 - - [18/Feb/2025 19:02:08] "POST /ric/v1/subscriptions/response HTTP/1.1" 200 -
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+
+RIC Indication Received from gnb_734_373_16b8cef1 for Subscription ID: 3, KPM Report Style: 4
+E2SM_KPM RIC Indication Content:
+-ColletStartTime:  1926-09-07 14:16:16
+-Measurements Data:
+-granulPeriod: 1
+Error during RIC indication decoding: 'ueMeasData'
+^CUnsubscribe Subscription ID:  2tE7M4EFclSujfLJHCNSOlkOP1n
+Successfully unsubscribed from Subscription ID:  2tE7M4EFclSujfLJHCNSOlkOP1n
+
+

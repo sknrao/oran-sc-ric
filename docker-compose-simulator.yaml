@@ -1,0 +1,15 @@
+services:
+  e2sim:
+    container_name: e2sim
+    hostname: e2sim
+    image: sknrao/e2sim:0.0.2
+    entrypoint: ["kpm_sim", "10.0.2.10", "36421"]
+    environment:
+      - RAN_FUNC_ID=2
+    networks:
+      oran-sc-ric_ric_network:
+        ipv4_address: ${E2SIM_IP:-10.0.2.111}
+
+networks:
+  oran-sc-ric_ric_network:
+    external: true
