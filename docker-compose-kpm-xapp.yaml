@@ -1,0 +1,25 @@
+services:
+  kpmxapp:
+    container_name: kpmxapp
+    hostname: kpmxapp
+    image: sknrao/kpm-basic-xapp:0.1.0
+    env_file:
+      - .env
+    environment:
+      - RMR_SEED_RT=/ws/config/uta_rtg.rt
+      - RMR_SRC_ID=${KPM_XAPP_IP}
+      - RMR_RTG_SVC # leave empty, so RMR works correctly with RT Manager Simulator
+    volumes:
+      - type: bind
+        source: ./ric/configs/routes.rtg
+        target: /ws/config/uta_rtg.rt
+      - type: bind
+        source: ./ric/configs/config-file.json
+        target: /ws/config/config-file.json
+    networks:
+      oran-sc-ric_ric_network:
+        ipv4_address: ${KPM_XAPP_IP:-10.0.2.201}
+
+networks:
+  oran-sc-ric_ric_network:
+    external: true

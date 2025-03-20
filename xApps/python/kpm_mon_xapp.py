@@ -76,7 +76,7 @@ class MyXapp(xAppBase):
         elif (kpm_report_style == 4):
             # TODO: currently only dummy condition that is always satisfied, useful to get IDs of all connected UEs
             # example matching UE condition: ul-rSRP < 1000
-            matchingUeConds = [{'testCondInfo': {'testType': ('ul-rSRP', 'true'), 'testExpr': 'lessthan', 'testValue': ('valueInt', 1000)}}]
+            matchingUeConds = [{'testCondInfo': {'testType': ('sNSSAI', 'true'), 'testExpr': 'equal', 'testValue': ('valueOctS', b'1')}}]
             
             print("Subscribe to E2 node ID: {}, RAN func: e2sm_kpm, Report Style: {}, metrics: {}".format(e2_node_id, kpm_report_style, metric_names))
             self.e2sm_kpm.subscribe_report_service_style_4(e2_node_id, report_period, matchingUeConds, metric_names, granul_period, subscription_callback)
